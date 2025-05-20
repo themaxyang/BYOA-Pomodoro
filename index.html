@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pomodoro Timer</h1>
+    <div class="progress-ring-wrapper">
+      <svg id="progress-ring" width="180" height="180">
+        <circle r="80" cx="90" cy="90" fill="none" stroke="#e0eafc" stroke-width="12" />
+        <circle id="progress-ring-arc" r="80" cx="90" cy="90" fill="none" stroke="#2980b9" stroke-width="12" stroke-linecap="round" stroke-dasharray="502" stroke-dashoffset="0" />
+      </svg>
+      <div id="timer" class="timer-on-ring">25:00</div>
+    </div>
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+    <div class="mode-toggle">
+      <button id="toggle-mode">Rest Mode</button>
+    </div>
+    <div class="message">Time to focus!</div>
+    <button id="open-settings" class="settings-btn" aria-label="Open settings">⚙️</button>
+    <button id="toggle-tasks" class="tasks-btn" aria-label="Show tasks">📝</button>
+    <button id="toggle-theme" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <aside id="task-sidebar" class="task-sidebar" style="display:none;">
+      <div class="task-sidebar-header">
+        <span>Tasks</span>
+        <button id="close-tasks" aria-label="Close tasks">✖️</button>
+      </div>
+      <form id="task-form" class="task-form">
+        <input id="task-input" type="text" placeholder="Add a task..." maxlength="60" required />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="task-list" class="task-list"></ul>
+    </aside>
+    <div id="current-task-label" class="current-task-label"></div>
+    <div id="settings-modal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <h2>Settings</h2>
+        <form id="settings-form">
+          <label>Focus duration (min): <input type="number" id="focus-duration" min="1" max="120" required></label><br>
+          <label>Short break (min): <input type="number" id="short-break" min="1" max="60" required></label><br>
+          <label>Long break (min): <input type="number" id="long-break" min="1" max="60" required></label><br>
+          <label>Cycles per set: <input type="number" id="cycles-per-set" min="1" max="10" required></label><br>
+          <label><input type="checkbox" id="auto-start"> Auto-start next phase</label><br>
+          <label>Chime volume: <input type="range" id="chime-volume" min="0" max="1" step="0.01" value="0.5"></label><br>
+          <div class="modal-actions">
+            <button type="submit">Save</button>
+            <button type="button" id="close-settings">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="stats-card" class="stats-card">
+      <div><span id="stat-today">0</span> today</div>
+      <div><span id="stat-week">0</span> this week</div>
+      <div><span id="stat-streak">0</span> streak</div>
+      <div><span id="stat-total">0</span> min total</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
