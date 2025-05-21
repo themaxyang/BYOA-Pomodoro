@@ -1,4 +1,4 @@
-# BYOA-Pomodoro
+# Pomodoro-Timer
 # Features
 
 ## Core Timer Functionality
