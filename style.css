@@ -519,8 +519,11 @@ body.dark .task-list .current-btn.active {
   background: #ffd200;
   color: #232526;
 }
+body.dark .task-list .task-text {
+  color: #f5f6fa !important;
+}
 body.dark .task-list .task-text.done {
-  color: #888;
+  color: #888 !important;
 }
 body.dark .modal {
   background: rgba(34,34,59,0.55);
