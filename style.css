@@ -132,13 +132,41 @@ h1 {
 
 @media (max-width: 500px) {
   .container {
-    padding: 1.5rem 0.7rem;
+    width: 100vw;
+    max-width: 100vw;
     min-width: unset;
-    max-width: 98vw;
-    border-radius: 16px;
+    padding: 1.5rem 0.2rem;
+    border-radius: 12px;
+    box-sizing: border-box;
   }
-  #timer {
-    font-size: 2.2rem;
+  .progress-ring-wrapper,
+  #progress-ring {
+    width: 60vw !important;
+    height: 60vw !important;
+    max-width: 220px;
+    max-height: 220px;
+    min-width: 120px;
+    min-height: 120px;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  #timer.timer-on-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw !important;
+    width: auto;
+    min-width: unset;
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   h1 {
     font-size: 1.1rem;
